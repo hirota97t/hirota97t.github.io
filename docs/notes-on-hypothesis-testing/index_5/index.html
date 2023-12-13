@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>仮説検定における注意点 - Hugo Whisper Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://hirota97t.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.c7afd979368c599950c866efee0b249dea702ae651c8af3fcc315f9111f899a2.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://hirota97t.github.io"><img width="70" height="70" alt="Logo" src="/images/logo_IQB.jpg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://hirota97t.github.io"><img  width="70" height="70" alt="Logo" src="/images/logo_IQB-mobile.jpg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/statistical-hypothesis-testing/">統計的仮説検定を使う前に</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/parametric-test/">2群のパラメトリック検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/nonparametric-test/">2群のノンパラメトリック検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/multiple-comparison/index_4/">多重比較検定</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/">仮説検定における注意点</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">仮説検定における注意点</h1>
+<div class="content ">
+  <h3 id="p-hacking">▪p-hacking</h3>
+<p>p-hackingとは，意図する/しないにかかわらず，p値を都合の良いように（有意水準$\alpha=0.05$を下回るように）操作すること．</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">p-hackingの具体例
+</span></span><span class="line"><span class="cl">例1: p&lt;0.05になるまでサンプルサイズを増やした
+</span></span><span class="line"><span class="cl">例2: 複数の要因を探索し，p&lt;0.05になったものだけを報告した
+</span></span></code></pre></div><p>例1については，サンプルサイズを大きくすればp値は小さくなるため，検出したい効果量を事前に指定し，サンプルサイズを設計することで対策する．<br>
+例2は，p-hackingに関連する概念である<strong>HARKing</strong>の例である．HARKingはHypothesis After the Results are Knownの略で，データを得て結果を見てから仮説を作ることである．具体的には，多くの実験を繰り返す，またはデータの様々な変数をこねくり回して意味のありそうな結果だけをピックアップし，最初から立てていた仮説として報告することである．</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+          
+            <div class="copyright">Free Hugo theme by <a class="zerostatic" href="https://www.zerostatic.io">Zerostatic Themes</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}]
+    });
+  });
+</script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.302a6fc365d5139fb98cf60bdb8f715d96257ea189161d36c190ccfa8182e569.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>

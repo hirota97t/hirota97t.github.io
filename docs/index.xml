@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Overview on Hugo Whisper Theme</title>
+    <link>https://hirota97t.github.io/docs/</link>
+    <description>Recent content in Overview on Hugo Whisper Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language><atom:link href="https://hirota97t.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>統計的仮説検定を使う前に</title>
+      <link>https://hirota97t.github.io/docs/statistical-hypothesis-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hirota97t.github.io/docs/statistical-hypothesis-testing/</guid>
+      <description>仮説検定に用いる基本的な内容</description>
+    </item>
+    
+    <item>
+      <title>2群のパラメトリック検定</title>
+      <link>https://hirota97t.github.io/docs/parametric-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hirota97t.github.io/docs/parametric-test/</guid>
+      <description>2群のパラメトリック検定の基礎</description>
+    </item>
+    
+    <item>
+      <title>2群のノンパラメトリック検定</title>
+      <link>https://hirota97t.github.io/docs/nonparametric-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hirota97t.github.io/docs/nonparametric-test/</guid>
+      <description>2群のノンパラメトリック検定の基礎</description>
+    </item>
+    
+    <item>
+      <title>多重比較検定</title>
+      <link>https://hirota97t.github.io/docs/multiple-comparison/index_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hirota97t.github.io/docs/multiple-comparison/index_4/</guid>
+      <description>多重比較検定の基礎</description>
+    </item>
+    
+    <item>
+      <title>仮説検定における注意点</title>
+      <link>https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/</guid>
+      <description>仮説検定における注意点</description>
+    </item>
+    
+  </channel>
+</rss>

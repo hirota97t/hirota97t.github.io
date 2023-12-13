@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>多重比較検定 - Hugo Whisper Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://hirota97t.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.c7afd979368c599950c866efee0b249dea702ae651c8af3fcc315f9111f899a2.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://hirota97t.github.io"><img width="70" height="70" alt="Logo" src="/images/logo_IQB.jpg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://hirota97t.github.io"><img  width="70" height="70" alt="Logo" src="/images/logo_IQB-mobile.jpg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/statistical-hypothesis-testing/">統計的仮説検定を使う前に</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/parametric-test/">2群のパラメトリック検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/nonparametric-test/">2群のノンパラメトリック検定</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://hirota97t.github.io/docs/multiple-comparison/index_4/">多重比較検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/">仮説検定における注意点</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">多重比較検定</h1>
+<div class="content ">
+  <h3 id="なぜ多重比較検定が必要">▪なぜ多重比較検定が必要？</h3>
+<p>多重比較検定は，複数回の検定を重ねることによって，本来設定していた有意水準で，より誤判定してしまう確率が高まってしまうという<strong>多重性の問題</strong>に対処するために考案された．<br>
+ここで，ある母集団から3群取り出して，それぞれの平均値を$\bar{X_1},\bar{X_2},\bar{X_3}$とし，これら3群でそれぞれ差を比較する．つまり，$(\bar{X_1}-\bar{X_2}),(\bar{X_1}-\bar{X_3}),(\bar{X_2}-\bar{X_3})$の3組を有意水準5%でt検定等で比較検定する．もともとこの3群に差がなかったとしても，それぞれの検定で，標本誤差によりたまたま有意になってしまう確率が5%ある．すなわち，同じ試験を20回おこなうと，どこかの試験で有意差が出る確率は，3回に増加する．<br>
+具体的に計算すると，有意とならない確率は，$(1-0.05)\times(1-0.05)\times(1-0.05)=0.86$となり，有意水準が14%となり，通常の5%のほぼ3倍に増加する．</p>
+<h3 id="bonferoni法">▪Bonferoni法</h3>
+<p>Bonferoni法は最も単純でわかりやすい．例えば，3群の場合，2群の差の検定は3回行う必要があるので，単純に有意水準0.05を3で割って，0.017を有意水準とする．このようにすれば，3回検定しても全体の有意水準は0.05に保つことができる．Bonferroni法の場合は群数が増えると有意水準が飛躍的に小さくなり厳しい検定となるので，5群以上では用いるべきではないとされる．</p>
+<h3 id="tukey-kramer法">▪Tukey-Kramer法</h3>
+<p>3群では，$(\bar{X_1}-\bar{X_2}),(\bar{X_1}-\bar{X_3}),(\bar{X_2}-\bar{X_3})$が得られるが，そのうち最大の差で考える検定法である．</p>
+<p><img src="/images/tukey_kramer.jpg" alt="tukey_kramer"></p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+          
+            <div class="copyright">Free Hugo theme by <a class="zerostatic" href="https://www.zerostatic.io">Zerostatic Themes</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}]
+    });
+  });
+</script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.302a6fc365d5139fb98cf60bdb8f715d96257ea189161d36c190ccfa8182e569.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>

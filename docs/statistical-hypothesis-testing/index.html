@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>統計的仮説検定を使う前に - Hugo Whisper Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://hirota97t.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.c7afd979368c599950c866efee0b249dea702ae651c8af3fcc315f9111f899a2.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://hirota97t.github.io"><img width="70" height="70" alt="Logo" src="/images/logo_IQB.jpg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://hirota97t.github.io"><img  width="70" height="70" alt="Logo" src="/images/logo_IQB-mobile.jpg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="active ">
+      <a href="https://hirota97t.github.io/docs/statistical-hypothesis-testing/">統計的仮説検定を使う前に</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/parametric-test/">2群のパラメトリック検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/nonparametric-test/">2群のノンパラメトリック検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/multiple-comparison/index_4/">多重比較検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/">仮説検定における注意点</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">統計的仮説検定を使う前に</h1>
+<div class="content ">
+  <h3 id="母集団と標本">▪母集団と標本</h3>
+<p>生命科学系の研究のほとんどは，標本データを使用する．しかし研究者は，<strong>標本データから母集団を推定することを目的</strong>としているを忘れてはいけない．研究を進める際には，研究の目的をよく考え，母集団は何かを想定しなければならない．母集団からの標本抽出は，基本的に無作為抽出（ランダムサンプリング）でおこなう．無作為抽出とは，母集団を反映する標本を作為なく取り出すことである．ここで，無作為抽出は，決してデタラメに取り出すことではないことに注意されたい．</p>
+<h3 id="測定誤差を仮説検定は考慮してくれない">▪測定誤差を仮説検定は考慮してくれない</h3>
+<p>個々の生物にはばらつきがあり，さらに測定者の測定誤差が上乗せされる．測定誤差が大きいとデータの信頼度は低くなり，もはや仮説検定に値しない．<br>
+そこで，学生はまず自身の定量能力を知る必要がある．方法は単純で，同じ試料を2回測定し，それぞれの測定値で相関をとってみることである．サンプリング能力を高めておかないと，折角の実験が台なしになるため，特に学生は測定誤差を小さくするよう訓練をおこなうべきである．</p>
+<p><img src="/images/sokuteigosa.jpg" alt="sokuteigosa"></p>
+<h3 id="差があるないはどう判断するのか">▪差がある？ない？はどう判断するのか</h3>
+<p>A群とB群間で差があるかどうかは，平均値の差だけでは決められない．下図の右上下のグラフは，A・B群の個々のデータを棒グラフにしている．いずれのグラフも平均をとると左のグラフになるが，右上のグラフは差がわかりやすいの対して，右下のグラフは差がわかりにくい．<br>
+ここで重要なことは，<strong>差があるかどうかは，平均値の差だけでなくばらつき方でも変わる</strong>ということである．この考え方こそが，パラメトリック検定の原理である．</p>
+<p><img src="/images/parametric_kangaekata.jpg" alt="parametric_kangaekata"></p>
+<h3 id="パラメトリックとノンパラメトリック">▪パラメトリックとノンパラメトリック</h3>
+<p>仮説検定には，大きく分けてパラメトリック検定とノンパラメトリック検定の2つがある．両者を簡単にさらっておく．</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">・パラメトリック検定：母集団が正規分布することを仮定している．
+</span></span><span class="line"><span class="cl">・ノンパラメトリック検定：母集団の分布に仮定がなく，分布が偏っていてもいい．
+</span></span></code></pre></div><p>ここで，注意したいのは，ノンパラメトリック検定には母集団が正規分布している場合も含まれることである．</p>
+<h5 id="正規性の検定">・正規性の検定</h5>
+<p>パラメトリック検定は母集団が正規分布することが前提である．正規分布しているかどうかは正規性の検定をおこなえばいい．詳しい検定方法はここでは説明しないが，$n$が小さい場合に，正規性の検定をおこなうと正規分布と判断されることが多い（$n$が30以上は必要と言われている）．</p>
+<h3 id="分散と標準偏差">▪分散と標準偏差</h3>
+<p>以下に，標本と不偏の分散・標準偏差を示す．ただし，母集団から取り出した標本の大きさを$n$とする．</p>
+<p>標本分散 $s^{2}$：
+$$ s^{2} = \displaystyle\frac{1}{n} \sum^{n}_{i=1}(x_i-\bar{x})^{2} $$</p>
+<p>標本標準偏差 $s$：
+$$ s = \displaystyle\sqrt{ \frac{1}{n} \sum^{n}_{i=1}(x_i-\bar{x})^{2} } $$</p>
+<p>不偏分散 $u^{2}$：
+$$ u^{2} = \displaystyle\frac{1}{n-1} \sum^{n}_{i=1}(x_i-\bar{x})^{2} $$</p>
+<p>不偏標準偏差 $u$：
+$$ u = \displaystyle\sqrt{ \frac{1}{n-1} \sum^{n}_{i=1}(x_i-\bar{x})^{2} } $$</p>
+<p>標本分散は母分散より少し小さな値となることが，すでに理論的に知られており，母分散を推定するためには$n$ではなく，$n-1$で割り算するとちょうどいいことがわかっている．ここで，$n-1$は自由度と呼ばれている．すなわち，<strong>$n$で割ると標本分散がわかり，$n-1$で割ると母分散を推定できる</strong>．</p>
+<h3 id="標本平均標準偏差standard-deviation-sd">▪標本平均±標準偏差（standard deviation; SD）</h3>
+<p>研究者が一般的に用いる標準偏差は，不偏標準偏差$u$を指す．不偏標準偏差$u$の$SD$は母標準偏差$\sigma$を推定する．$\bar{x}\pm{SD}$の範囲は，下図にあるように正規分布する母集団のデータの68%が存在することが期待される範囲を示している．
+<img src="/images/X_SD.jpg" alt="X_SD"></p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+          
+            <div class="copyright">Free Hugo theme by <a class="zerostatic" href="https://www.zerostatic.io">Zerostatic Themes</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}]
+    });
+  });
+</script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.302a6fc365d5139fb98cf60bdb8f715d96257ea189161d36c190ccfa8182e569.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>

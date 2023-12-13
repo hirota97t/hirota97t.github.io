@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>2群のパラメトリック検定 - Hugo Whisper Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://hirota97t.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.c7afd979368c599950c866efee0b249dea702ae651c8af3fcc315f9111f899a2.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://hirota97t.github.io"><img width="70" height="70" alt="Logo" src="/images/logo_IQB.jpg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://hirota97t.github.io"><img  width="70" height="70" alt="Logo" src="/images/logo_IQB-mobile.jpg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/statistical-hypothesis-testing/">統計的仮説検定を使う前に</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://hirota97t.github.io/docs/parametric-test/">2群のパラメトリック検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/nonparametric-test/">2群のノンパラメトリック検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/multiple-comparison/index_4/">多重比較検定</a>
+    </li>
+    
+    <li class="">
+      <a href="https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/">仮説検定における注意点</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">2群のパラメトリック検定</h1>
+<div class="content ">
+  <h3 id="母集団から取り出したn個の標本の平均値の分布を考える">▪母集団から取り出した$n$個の標本の平均値の分布を考える</h3>
+<p>ここでは，個々の標本データの分布ではなく，$n$個の標本平均$\bar{X_i}$の分布を考える．下図のように，正規分布している母集団$N(\mu,\sigma^{2})$から$n$個の標本を取り出し標本平均$\bar{X_i}$を計算する．この手順を何度も繰り返して得られた標本平均を，一つの別の母集団と考え分布を調べると，正規分布し，その平均値は$\mu$に近づくことが知られている．<br>
+しかし，母集団の正規分布$N(\mu,\sigma^{2})$とはばらつき方が異なり，<strong>$1/n$だけ小さいばらつき方になる</strong>ことがすでにわかっている．</p>
+<p><img src="/images/parametric_kiso.jpg" alt="parametric_kiso"></p>
+<h5 id="関係する用語の整理">関係する用語の整理</h5>
+<ul>
+<li>大数の法則：サンプルサイズ$n$を大きくしていくと，標本平均$\bar{X}$が母平均$\mu$に限りなく近づく</li>
+<li>中心極限定理：母集団がどのような分布であっても，サンプルサイズ$n$が大きいときに，標本平均$\bar{X}$の分布が正規分布で近似できる</li>
+</ul>
+<h3 id="正規分布を標準正規分布に">▪正規分布を標準正規分布に</h3>
+<p>正規分布は，母平均$\mu$と母分散$\sigma^{2}$が違えば分布が異なるので，いろいろな母集団で異なる正規分布を考えるのは面倒である．そこで，$\mu=0$，$\sigma=1$の正規分布を<strong>標準正規分布</strong>と定義し，それぞれ異なる正規分布を標準正規分布に変換（<strong>標準化</strong>）して考える．<br>
+標準化は次の式で定義される．
+$$ Z_i = \dfrac{\bar{X_i}-\mu}{\dfrac{\sigma}{\sqrt{n}}} $$</p>
+<p><strong>母標準偏差$\sigma$はわからないので，不偏標準偏差$u$に置き換える．</strong> $u$に置き換えると，正規分布とは少し違う分布となり，t分布と呼ばれる（両裾が広い）．
+$$ t_i = \dfrac{\bar{X_i}-\mu}{\dfrac{u}{\sqrt{n}}} $$</p>
+<p><img src="/images/seikibunpu_tbunpu.jpg" alt="seikibunpu_tbunpu"></p>
+<h3 id="標本平均標準誤差standard-error-se">▪標本平均±標準誤差（standard error; SE）</h3>
+<p><strong>$t_i$式の分母である$u/{\sqrt{n}}$は標本平均がどのようなばらつき方をしているかを示しており，これが標準誤差である</strong>．$SE$は母平均$\mu$がどのあたりにあるのか，すなわち，<strong>母平均$\mu$のありそうな範囲</strong>を表している．また，$SE$の式を見ると，$n$が大きくなればなるほど，母平均$\mu$の存在する範囲が絞りこまれることがわかる．</p>
+<h5 id="-標本平均pmsdと標本平均pmseの違い-">~ 標本平均$\pm{SD}$と標本平均$\pm{SE}$の違い ~</h5>
+<ul>
+<li>標本平均$\pm{SD}$<br>
+母平均$\mu$と母標準偏差$\sigma$の両方に関心がある．</li>
+<li>標本平均$\pm{SE}$<br>
+母平均$\mu$に関心が集中しており，母標準偏差$\sigma$には関心がない．</li>
+</ul>
+<h2 id="2群の差の検定">2群の差の検定</h2>
+<h3 id="仮説検定の考え方">▪仮説検定の考え方</h3>
+<h4 id="帰無仮説対立仮説">・帰無仮説・対立仮説</h4>
+<p>群間比較をおこなう検定において，「差がない」ことから考えていく考え方が基本であり共通している．この「差がない」という仮説を<strong>帰無仮説</strong>と呼び，「差がある」という仮説を<strong>対立仮説</strong>と呼ぶ．</p>
+<h4 id="p値有意水準alpha">・p値・有意水準$\alpha$</h4>
+<p>仮説検定では，帰無仮説が正しいと仮定する仮想世界を想定する．<strong>実際に得られたデータが，この仮想世界では非常に稀な場合，仮想世界が間違っている，つまり，仮想世界における「帰無仮説が正しい」という仮定が間違っている</strong>と考えられる．</p>
+<ul>
+<li>p値：帰無仮説が正しいと仮定したときに，観察された値以上に極端な値が出る確率</li>
+<li>有意水準$\alpha$：帰無仮説を棄却するかどうかの判断の境目に用いる値  　</li>
+</ul>
+<p>仮説検定の流れとして，まず母集団に関して帰無仮説と対立仮説を設定する．帰無仮説が正しい世界を想定し，実験や観察によって得た標本データから，その起こりやすさをp値で評価する．p値が有意水準$\alpha$を下回るかどうかで，帰無仮説の棄却を決める．</p>
+<p><img src="/images/p_alpha.jpg" alt="p_alpha"></p>
+<h4 id="2群の差の検定の種類">・2群の差の検定の種類</h4>
+<ul>
+<li>対応のない2群の差の検定<br>
+e.g. 独立した2群のネズミで，対照食と試験食を与えて比較する場合</li>
+<li>対応のある2群の差の検定<br>
+e.g. 同じネズミで，食品成分投与前と後の血圧を比較する場合</li>
+</ul>
+<p><img src="/images/2gun.jpg" alt="2gun"></p>
+<p><strong>＊等分散性の確認</strong><br>
+等分散かどうかは，<strong>等分散性の検定</strong>を行い，等分散と判断されれば<strong>unpaired t test</strong>を，等分散と判断されなければ<strong>Welchの検定</strong>をおこなう．<br>
+また，<strong>Welchの検定は，等分散でない場合だけではなく，等分散かどうか判断できない場合でも正確な検定ができる</strong>．一方で，unpaired t testは，等分散から外れると検定が不正確になる．<br>
+加えて，等分散性の検定は一般的に$n=30$以上が必要になる．したがって，標本の大きさ$n$が小さい場合，等分散性の検定があてにならない．そうなると，$n$が小さいとき，unpaired t testをおこなうのは危険である．結局，<strong>標本の大きさ$n$にかかわらず，等分散性の検定はおこなわず，Welchの検定のみおこなえばいい</strong>．</p>
+<h3 id="対応のない2群の検定unpaired-t-test">▪対応のない2群の検定（unpaired t test）</h3>
+<p>2つの標本$\bar{X_1}, \bar{X_2}$の母平均をそれぞれ$\mu_1, \mu_2$とし，母分散を$\sigma_1^{2}, \sigma_2^{2}$とする．</p>
+<ul>
+<li>帰無仮説：差がない（$\mu_{1}=\mu_{2}$）</li>
+<li>対立仮説：差がある（$\mu_{1}\neq \mu_{2}$）</li>
+</ul>
+<p>＊正規分布の性質から，$(\bar{X_1}-\bar{X_2})$も正規分布になることがわかっているに注意する．</p>
+<p><img src="/images/unpaired_t_test.jpg" alt="unpaired_t_test"></p>
+<p>上図の$t_1$値が$t$分布のどこに位置するかで，有意差を決める．下図の青い領域は，有意水準$\alpha$での<strong>棄却域</strong>といい，棄却域に現実の値が含まれるとき，${p}\lt{\alpha}$となり，帰無仮説を棄却することになる．ここで，p値は$|t|$の外側の面積であることに注意されたい．</p>
+<p><img src="/images/t_value.jpg" alt="t_value"></p>
+<h3 id="welchの検定">▪Welchの検定</h3>
+<p>基本的な考え方は，unpaired t testとよく似ているが，分散が異なるあるいは，分散が未知の場合を考える．</p>
+<p><img src="/images/welch_test.jpg" alt="welch_test"></p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+          
+            <div class="copyright">Free Hugo theme by <a class="zerostatic" href="https://www.zerostatic.io">Zerostatic Themes</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}]
+    });
+  });
+</script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.302a6fc365d5139fb98cf60bdb8f715d96257ea189161d36c190ccfa8182e569.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>
