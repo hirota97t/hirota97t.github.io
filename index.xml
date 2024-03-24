@@ -5,51 +5,42 @@
     <link>https://hirota97t.github.io/</link>
     <description>Recent content in 定量生命科学研究所 on Hugo Whisper Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language><atom:link href="https://hirota97t.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language>
+    <atom:link href="https://hirota97t.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>統計的仮説検定を使う前に</title>
       <link>https://hirota97t.github.io/docs/statistical-hypothesis-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://hirota97t.github.io/docs/statistical-hypothesis-testing/</guid>
       <description>仮説検定に用いる基本的な内容</description>
     </item>
-    
     <item>
       <title>2群のパラメトリック検定</title>
       <link>https://hirota97t.github.io/docs/parametric-test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://hirota97t.github.io/docs/parametric-test/</guid>
       <description>2群のパラメトリック検定の基礎</description>
     </item>
-    
     <item>
       <title>2群のノンパラメトリック検定</title>
       <link>https://hirota97t.github.io/docs/nonparametric-test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://hirota97t.github.io/docs/nonparametric-test/</guid>
       <description>2群のノンパラメトリック検定の基礎</description>
     </item>
-    
     <item>
       <title>多重比較検定</title>
       <link>https://hirota97t.github.io/docs/multiple-comparison/index_4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://hirota97t.github.io/docs/multiple-comparison/index_4/</guid>
       <description>多重比較検定の基礎</description>
     </item>
-    
     <item>
       <title>仮説検定における注意点</title>
       <link>https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://hirota97t.github.io/docs/notes-on-hypothesis-testing/index_5/</guid>
       <description>仮説検定における注意点</description>
     </item>
-    
   </channel>
 </rss>
